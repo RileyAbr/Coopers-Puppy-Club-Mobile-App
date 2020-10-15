@@ -1,2 +1,2 @@
-# Coopers Puppy Club-Mobile App
+# Cooper's Puppy Club-Mobile App
  
