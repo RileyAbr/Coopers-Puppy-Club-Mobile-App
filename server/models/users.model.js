@@ -1,12 +1,12 @@
-const mongoose = require("../../common/services/mongoose.service").mongoose;
+const mongoose = require("../services/mongodb.service").mongoose;
 const Schema = mongoose.Schema;
 
 const userSchema = new Schema({
     firstName: String,
     lastName: String,
     email: String,
-    password: String,
-    permissionLevel: Number,
+    password: String
+    // permissionLevel: Number
 });
 
 userSchema.virtual("id").get(function () {
@@ -15,7 +15,7 @@ userSchema.virtual("id").get(function () {
 
 // Ensure virtual fields are serialised.
 userSchema.set("toJSON", {
-    virtuals: true,
+    virtuals: true
 });
 
 userSchema.findById = function (cb) {
@@ -59,7 +59,10 @@ exports.list = (perPage, page) => {
 exports.patchUser = (id, userData) => {
     return User.findOneAndUpdate(
         {
-            _id: id,
+            _id: id
+        },
+        {
+            useFindAndModify: false
         },
         userData
     );

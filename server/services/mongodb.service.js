@@ -9,7 +9,7 @@ const options = {
     poolSize: 10, // Maintain up to 10 socket connections
     bufferMaxEntries: 0,
     useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useUnifiedTopology: true
 };
 
 const connectWithRetry = () => {
