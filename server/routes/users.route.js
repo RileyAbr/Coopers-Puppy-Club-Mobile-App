@@ -1,5 +1,5 @@
 const UsersController = require("../controllers/users.controller");
-// const PermissionMiddleware = require("../common/middlewares/auth.permission.middleware");
+// const PermissionMiddleware = require("..middlewares/authPermission.middleware");
 const ValidationMiddleware = require("../middlewares/authValidate.middleware");
 
 exports.routesConfig = function (app) {

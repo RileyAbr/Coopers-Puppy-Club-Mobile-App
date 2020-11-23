@@ -1,5 +1,8 @@
 const mongoose = require("mongoose");
+/* eslint-disable */
 const dotenv = require("dotenv").config();
+/* eslint-enable */
+
 let count = 0;
 
 const uri = process.env.MONGO_URI;
@@ -9,7 +12,8 @@ const options = {
     poolSize: 10, // Maintain up to 10 socket connections
     bufferMaxEntries: 0,
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 };
 
 const connectWithRetry = () => {
@@ -20,6 +24,7 @@ const connectWithRetry = () => {
             console.log("MongoDB is connected");
         })
         .catch((err) => {
+            console.log(err);
             console.log(
                 "MongoDB connection unsuccessful, retry after 5 seconds.",
                 ++count

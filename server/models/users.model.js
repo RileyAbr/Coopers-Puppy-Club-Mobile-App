@@ -1,13 +1,42 @@
 const mongoose = require("../services/mongodb.service").mongoose;
+const isAlphanumeric = require("validator").isAlphanumeric,
+    isEmail = require("validator").isEmail;
+
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema({
-    firstName: String,
-    lastName: String,
-    email: String,
-    password: String
-    // permissionLevel: Number
-});
+const userSchema = new Schema(
+    {
+        firstName: {
+            type: String,
+            trim: true,
+            required: true,
+            validate: [isAlphanumeric, "Only letters and numbers are permitted"]
+        },
+        lastName: {
+            type: String,
+            trim: true,
+            required: true,
+            validate: [isAlphanumeric, "Only letters and numbers are permitted"]
+        },
+        email: {
+            type: String,
+            trim: true,
+            lowercase: true,
+            unique: true,
+            required: "Email address is required",
+            validate: [isEmail, "Email address must be a valid email"]
+        },
+        password: {
+            type: String,
+            required: "Password is required"
+        },
+        favParkID: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Parks"
+        }
+    },
+    { timestamps: { createdAt: "created_at", updatedAt: "updated_at" } }
+);
 
 userSchema.virtual("id").get(function () {
     return this._id.toHexString();
@@ -27,6 +56,7 @@ const User = mongoose.model("Users", userSchema);
 exports.findByEmail = (email) => {
     return User.find({ email: email });
 };
+
 exports.findById = (id) => {
     return User.findById(id).then((result) => {
         result = result.toJSON();
@@ -38,6 +68,7 @@ exports.findById = (id) => {
 
 exports.createUser = (userData) => {
     const user = new User(userData);
+
     return user.save();
 };
 
@@ -60,9 +91,6 @@ exports.patchUser = (id, userData) => {
     return User.findOneAndUpdate(
         {
             _id: id
-        },
-        {
-            useFindAndModify: false
         },
         userData
     );
