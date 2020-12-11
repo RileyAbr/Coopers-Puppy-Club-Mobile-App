@@ -1,6 +1,8 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View } from 'react-native';
 import { Button } from 'react-native-elements';
+
+const ToeBeanSize = 90;
 
 const Home = ({ navigation }) => (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
@@ -9,35 +11,45 @@ const Home = ({ navigation }) => (
                 width: '100%',
                 flexDirection: 'row',
                 justifyContent: 'center',
-                marginBottom: -15,
+                marginBottom: -35,
             }}
         >
             <View
                 style={{
-                    width: 100,
-                    height: 100,
-                    backgroundColor: 'black',
-                    borderRadius: 100,
-                    marginTop: 45,
+                    width: ToeBeanSize,
+                    height: ToeBeanSize,
+                    backgroundColor: 'blue',
+                    borderRadius: ToeBeanSize,
+                    marginTop: 60,
                 }}
             />
             <View
                 style={{
-                    width: 100,
-                    height: 100,
-                    backgroundColor: 'black',
-                    borderRadius: 100,
-                    marginVertical: 0,
-                    marginHorizontal: 10,
+                    width: ToeBeanSize,
+                    height: ToeBeanSize,
+                    backgroundColor: 'blue',
+                    borderRadius: ToeBeanSize,
+                    marginLeft: 0,
+                    marginRight: 5,
                 }}
             />
             <View
                 style={{
-                    width: 100,
-                    height: 100,
-                    backgroundColor: 'black',
-                    borderRadius: 100,
-                    marginTop: 45,
+                    width: ToeBeanSize,
+                    height: ToeBeanSize,
+                    backgroundColor: 'blue',
+                    borderRadius: ToeBeanSize,
+                    marginLeft: 5,
+                    marginRight: 0,
+                }}
+            />
+            <View
+                style={{
+                    width: ToeBeanSize,
+                    height: ToeBeanSize,
+                    backgroundColor: 'blue',
+                    borderRadius: ToeBeanSize,
+                    marginTop: 60,
                 }}
             />
         </View>
