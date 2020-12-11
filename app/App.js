@@ -12,7 +12,7 @@ import Profile from './screens/Profile';
 
 const Tab = createBottomTabNavigator();
 
-const TabNavigation = () => (
+const MainTabNavigation = () => (
     <Tab.Navigator
         screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
@@ -50,7 +50,7 @@ const TabNavigation = () => (
 
 const App = () => (
     <NavigationContainer>
-        <TabNavigation />
+        <MainTabNavigation />
     </NavigationContainer>
 );
 
