@@ -7,6 +7,7 @@ const UsersRouter = require("./routes/users.route");
 const AuthRouter = require("./routes/auth.route");
 const ParksRouter = require("./routes/parks.route");
 const DogsRouter = require("./routes/dogs.route");
+const CheckInRouter = require("./routes/checkin.route");
 
 app.use(function (req, res, next) {
     res.header("Access-Control-Allow-Origin", "*");
@@ -32,6 +33,7 @@ UsersRouter.routesConfig(app);
 AuthRouter.routesConfig(app);
 ParksRouter.routesConfig(app);
 DogsRouter.routesConfig(app);
+CheckInRouter.routesConfig(app);
 
 app.listen(process.env.PORT, function () {
     console.log(
