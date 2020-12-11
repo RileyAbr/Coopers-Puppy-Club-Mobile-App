@@ -1,32 +1,46 @@
 {
-  "name": "coopers-puppy-club-app",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "android": "react-native run-android",
-    "ios": "react-native run-ios",
-    "start": "react-native start",
-    "test": "jest",
-    "lint": "eslint ."
-  },
-  "dependencies": {
-    "eslint": "^7.12.1",
-    "eslint-config-prettier": "^6.15.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "prettier": "^2.1.2",
-    "react": "16.13.1",
-    "react-native": "0.63.3"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.12.0",
-    "@babel/runtime": "^7.12.0",
-    "@react-native-community/eslint-config": "^2.0.0",
-    "babel-jest": "^26.5.2",
-    "jest": "^26.5.3",
-    "metro-react-native-babel-preset": "^0.63.0",
-    "react-test-renderer": "16.13.1"
-  },
-  "jest": {
-    "preset": "react-native"
-  }
+    "name": "coopers-puppy-club-app",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "android": "react-native run-android",
+        "ios": "react-native run-ios",
+        "start": "react-native start",
+        "test": "jest",
+        "lint": "eslint ."
+    },
+    "dependencies": {
+        "@react-native-community/masked-view": "^0.1.10",
+        "@react-navigation/bottom-tabs": "^5.11.2",
+        "@react-navigation/native": "^5.8.10",
+        "@react-navigation/stack": "^5.12.8",
+        "react": "16.13.1",
+        "react-native": "0.63.3",
+        "react-native-elements": "^3.0.0-alpha.1",
+        "react-native-gesture-handler": "^1.9.0",
+        "react-native-reanimated": "^1.13.2",
+        "react-native-safe-area-context": "^3.1.9",
+        "react-native-screens": "^2.16.1",
+        "react-native-vector-icons": "^7.1.0"
+    },
+    "devDependencies": {
+        "@babel/core": "^7.12.0",
+        "@babel/runtime": "^7.12.0",
+        "@react-native-community/eslint-config": "^2.0.0",
+        "babel-jest": "^26.5.2",
+        "eslint": "^7.15.0",
+        "eslint-config-airbnb": "^18.2.1",
+        "eslint-config-prettier": "^7.0.0",
+        "eslint-plugin-import": "^2.22.1",
+        "eslint-plugin-jsx-a11y": "^6.4.1",
+        "eslint-plugin-prettier": "^3.2.0",
+        "eslint-plugin-react": "^7.21.5",
+        "jest": "^26.5.3",
+        "metro-react-native-babel-preset": "^0.63.0",
+        "prettier": "^2.2.1",
+        "react-test-renderer": "16.13.1"
+    },
+    "jest": {
+        "preset": "react-native"
+    }
 }
