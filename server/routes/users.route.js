@@ -5,6 +5,7 @@ const ValidationMiddleware = require("../middlewares/authValidate.middleware");
 exports.routesConfig = function (app) {
     app.post("/users", [UsersController.insert]);
     app.get("/users", [
+        // This could be public later on
         ValidationMiddleware.validJWTNeeded,
         // PermissionMiddleware.minimumPermissionLevelRequired(PAID),
         UsersController.list
