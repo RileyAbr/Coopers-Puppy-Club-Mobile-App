@@ -40,6 +40,9 @@ const App = () => {
                     )}
                     <View style={styles.body}>
                         <View style={styles.sectionContainer}>
+                            <Text style={styles.sectionTitle}>This is Cooper's App!</Text>
+                        </View>
+                        <View style={styles.sectionContainer}>
                             <Text style={styles.sectionTitle}>Step One</Text>
                             <Text style={styles.sectionDescription}>
                                 Edit <Text style={styles.highlight}>App.js</Text> to change this
