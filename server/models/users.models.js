@@ -75,13 +75,6 @@ exports.findProfileDataById = (id) => {
             delete result.__v;
             return result;
         });
-
-    // return User.findById(id).then((result) => {
-    //     result = result.toJSON();
-    //     delete result._id;
-    //     delete result.__v;
-    //     return result;
-    // });
 };
 
 exports.createUser = (userData) => {

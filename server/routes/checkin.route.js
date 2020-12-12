@@ -7,6 +7,7 @@ exports.routesConfig = function (app) {
         CheckInController.insert
     ]);
     app.get("/checkins", [CheckInController.list]);
+    app.get("/checkins/parks", [CheckInController.listCheckinData]);
     app.get("/checkins/:checkInId", [CheckInController.getById]);
     app.get("/checkins/park/:parkId", [CheckInController.getByParkId]);
     app.patch("/checkins/:checkInId", [
