@@ -38,6 +38,12 @@ exports.getById = (req, res) => {
     });
 };
 
+exports.getProfileDataById = (req, res) => {
+    UserModel.findProfileDataById(req.params.userId).then((result) => {
+        res.status(200).send(result);
+    });
+};
+
 exports.patchById = (req, res) => {
     if (req.body.password) {
         let salt = crypto.randomBytes(16).toString("base64");
