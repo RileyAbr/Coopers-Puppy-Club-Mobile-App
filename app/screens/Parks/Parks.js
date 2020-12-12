@@ -1,5 +1,4 @@
 import React from "react";
-import { View, Text } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import ParksList from "../../components/ParksList";
@@ -9,8 +8,12 @@ const Stack = createStackNavigator();
 
 const Parks = () => (
     <Stack.Navigator>
-        <Stack.Screen name="Parks" component={ParksList} />
-        <Stack.Screen name="Park" component={ParksDetail} />
+        <Stack.Screen name="Fargo Area Parks" component={ParksList} />
+        <Stack.Screen
+            name="Park"
+            component={ParksDetail}
+            options={({ route }) => ({ title: route.params.parkName })}
+        />
     </Stack.Navigator>
 );
 

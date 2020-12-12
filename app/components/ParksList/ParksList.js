@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 
 function ParkBox({ navigation, parkName, count }) {
     return (
-        <TouchableOpacity onPress={() => navigation.navigate("Park")}>
+        <TouchableOpacity onPress={() => navigation.navigate("Park", { parkName })}>
             <View style={styles.parkBox}>
                 <Text>{parkName}</Text>
                 <Text>{count}</Text>
