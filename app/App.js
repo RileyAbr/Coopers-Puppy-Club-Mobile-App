@@ -1,35 +1,36 @@
-import 'react-native-gesture-handler';
-import React from 'react';
+import "react-native-gesture-handler";
+import React from "react";
 
-import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import Icon from 'react-native-vector-icons/FontAwesome';
+import Icon from "react-native-vector-icons/FontAwesome";
 
-import Home from './screens/Home';
-import ParksList from './screens/ParksList';
-import Profile from './screens/Profile';
+import Home from "./screens/Home";
+import Parks from "./screens/Parks";
+import Profile from "./screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
 const MainTabNavigation = () => (
     <Tab.Navigator
+        initialRouteName="Home"
         screenOptions={({ route }) => ({
             tabBarIcon: ({ focused, color, size }) => {
                 let iconName;
 
                 switch (route.name) {
-                    case 'Home':
-                        iconName = 'paw';
+                    case "Home":
+                        iconName = "paw";
                         break;
-                    case 'ParksList':
-                        iconName = 'tree';
+                    case "Parks":
+                        iconName = "tree";
                         break;
-                    case 'Profile':
-                        iconName = 'user';
+                    case "Profile":
+                        iconName = "user";
                         break;
                     default:
-                        iconName = 'question';
+                        iconName = "question";
                         break;
                 }
 
@@ -38,12 +39,12 @@ const MainTabNavigation = () => (
             },
         })}
         tabBarOptions={{
-            activeTintColor: 'tomato',
-            inactiveTintColor: 'gray',
+            activeTintColor: "tomato",
+            inactiveTintColor: "gray",
         }}
     >
+        <Tab.Screen name="Parks" component={Parks} />
         <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="ParksList" component={ParksList} />
         <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
 );
