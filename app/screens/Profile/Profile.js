@@ -1,19 +1,39 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
 import { Input } from "react-native-elements";
+import { createStackNavigator } from "@react-navigation/stack";
 
-const Profile = () => (
-    <View>
-        <View style={{ flex: 1, alignItems: "center" }}>
-            <Text>Hello, USER!</Text>
-        </View>
-        <View>
+import { getLoginUser } from "../../services/mongoDB.service";
+
+const Stack = createStackNavigator();
+
+const ProfileForm = () => {
+    const [userData, setUserData] = useState(getLoginUser());
+
+    const onChangeValue = (key, value) => {
+        const newUserData = { ...userData, [key]: value };
+        setUserData(newUserData);
+    };
+
+    return (
+        <View style={{ marginTop: 15 }}>
             <Input
-                placeholder="Name"
+                placeholder="First Name"
                 leftIcon={{ type: "font-awesome", name: "user" }}
                 textContentType="name"
                 autoCompleteType="username"
                 keyboardType="default"
+                value={userData.firstName}
+                onChangeText={(text) => onChangeValue("firstName", text)}
+            />
+            <Input
+                placeholder="Last Name"
+                leftIcon={{ type: "font-awesome", name: "user" }}
+                textContentType="name"
+                autoCompleteType="username"
+                keyboardType="default"
+                value={userData.lastName}
+                onChangeText={(text) => onChangeValue("lastName", text)}
             />
 
             <Input
@@ -22,8 +42,8 @@ const Profile = () => (
                 textContentType="emailAddress"
                 autoCompleteType="email"
                 keyboardType="email-address"
-                errorStyle={{ color: "red" }}
-                errorMessage="Not a valid email address"
+                value={userData.email}
+                onChangeText={(text) => onChangeValue("email", text)}
             />
 
             <Input
@@ -33,21 +53,33 @@ const Profile = () => (
                 autoCompleteType="username"
                 keyboardType="default"
                 secureTextEntry
+                value={userData.password}
+                onChangeText={(text) => onChangeValue("password", text)}
             />
 
             <Input
                 placeholder="Favorite Park"
                 leftIcon={{ type: "font-awesome", name: "tree" }}
                 keyboardType="default"
+                value={userData.favPark}
+                onChangeText={(text) => onChangeValue("favPark", text)}
             />
 
             <Input
                 placeholder="Dog's Name"
                 leftIcon={{ type: "font-awesome", name: "paw" }}
                 keyboardType="default"
+                value={userData.dogName}
+                onChangeText={(text) => onChangeValue("dogName", text)}
             />
         </View>
-    </View>
+    );
+};
+
+const Profile = () => (
+    <Stack.Navigator>
+        <Stack.Screen name="Profile" component={ProfileForm} />
+    </Stack.Navigator>
 );
 
 export default Profile;
