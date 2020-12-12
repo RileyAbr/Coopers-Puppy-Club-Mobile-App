@@ -20,6 +20,7 @@ const CooperTheme = {
         background: "#E7ECEF",
         card: "#DFDCD7",
         text: "#050A0F",
+        lightText: "#E7ECEF",
     },
 };
 
