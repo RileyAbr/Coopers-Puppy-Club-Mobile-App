@@ -2,6 +2,7 @@ import React from "react";
 import { useTheme } from "@react-navigation/native";
 import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
+import { getParks } from "../../services/mongoDB.service";
 
 function ParkBox({ navigation, parkName, count }) {
     const { colors } = useTheme();
@@ -23,11 +24,11 @@ function ParkBox({ navigation, parkName, count }) {
             color: colors.lightText,
         },
         parkBoxTitle: {
-            fontSize: 34,
+            fontSize: 26,
             alignSelf: "flex-start",
         },
         parkBoxCount: {
-            fontSize: 26,
+            fontSize: 22,
             alignSelf: "flex-end",
         },
     });
@@ -42,8 +43,9 @@ function ParkBox({ navigation, parkName, count }) {
                         <Icon
                             name="dog"
                             type="material-community"
-                            size={30}
+                            size={26}
                             color={colors.lightText}
+                            style={{ marginBottom: -5 }}
                         />
                     </Text>
                 </View>
@@ -52,15 +54,7 @@ function ParkBox({ navigation, parkName, count }) {
     );
 }
 
-const mockNames = [
-    { name: "Devin" },
-    { name: "Dan" },
-    { name: "Dominic" },
-    { name: "Jackson" },
-    { name: "James" },
-    { name: "Joel" },
-    { name: "John" },
-];
+const parks = getParks();
 
 const ParksList = ({ navigation }) => {
     const styles = StyleSheet.create({
@@ -77,12 +71,12 @@ const ParksList = ({ navigation }) => {
         <SafeAreaView>
             <ScrollView contentInsetAdjustmentBehavior="automatic">
                 <View style={styles.parkBoxList}>
-                    {mockNames.map((park) => (
+                    {parks.map((park) => (
                         <ParkBox
-                            key={park.name}
-                            parkName={park.name}
+                            key={park.parkName}
+                            parkName={park.parkName}
                             navigation={navigation}
-                            count={Math.floor(Math.random() * 10)}
+                            count={park.count}
                         />
                     ))}
                 </View>
