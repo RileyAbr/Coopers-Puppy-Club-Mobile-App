@@ -5,6 +5,7 @@ const getLoginUser = () => ({
     email: "riley.abrahamson@ndsu.edu",
     password: "DoubleEyes2!",
     favPark: "North Fargo Dog Park",
+    dogName: "Cooper",
 });
 
 const getParks = () => [
