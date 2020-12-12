@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { View } from "react-native";
+import { useTheme } from "@react-navigation/native";
 import { Button } from "react-native-elements";
 import axios from "axios";
 
@@ -9,6 +10,8 @@ const FootSize = 210;
 const Home = () => {
     const [checkedIn, setCheckedIn] = useState(false);
     const [checkedInID, setCheckedInID] = useState();
+
+    const { colors } = useTheme();
 
     const handleCheckInPress = () => {
         if (checkedIn) {
@@ -63,7 +66,7 @@ const Home = () => {
                     style={{
                         width: ToeBeanSize,
                         height: ToeBeanSize,
-                        backgroundColor: "skyblue",
+                        backgroundColor: colors.primary,
                         borderRadius: ToeBeanSize,
                         marginTop: 60,
                     }}
@@ -72,7 +75,7 @@ const Home = () => {
                     style={{
                         width: ToeBeanSize,
                         height: ToeBeanSize,
-                        backgroundColor: "skyblue",
+                        backgroundColor: colors.primary,
                         borderRadius: ToeBeanSize,
                         marginLeft: 0,
                         marginRight: 5,
@@ -82,7 +85,7 @@ const Home = () => {
                     style={{
                         width: ToeBeanSize,
                         height: ToeBeanSize,
-                        backgroundColor: "skyblue",
+                        backgroundColor: colors.primary,
                         borderRadius: ToeBeanSize,
                         marginLeft: 5,
                         marginRight: 0,
@@ -92,7 +95,7 @@ const Home = () => {
                     style={{
                         width: ToeBeanSize,
                         height: ToeBeanSize,
-                        backgroundColor: "skyblue",
+                        backgroundColor: colors.primary,
                         borderRadius: ToeBeanSize,
                         marginTop: 60,
                     }}
@@ -105,6 +108,8 @@ const Home = () => {
                     width: FootSize,
                     height: FootSize,
                     borderRadius: FootSize,
+                    backgroundColor: colors.primary,
+                    color: colors.lightText,
                 }}
             />
         </View>

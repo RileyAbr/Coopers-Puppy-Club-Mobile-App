@@ -1,3 +1,3 @@
-import ParksList from './ParksList';
+import ParksList from "./ParksList";
 
 export default ParksList;

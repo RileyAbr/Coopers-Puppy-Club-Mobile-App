@@ -1,35 +1,24 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { FlatList } from "react-native";
+import { ListItem } from "react-native-elements";
 
-const Item = ({ title, subtitle }) => (
-    <View>
-        <Text>{title}</Text>
-        <Text>{subtitle}</Text>
-    </View>
-);
+import { getCheckIns } from "../../services/mongoDB.service";
 
 const ParkDetail = () => {
-    const DATA = [
-        {
-            id: "bd7acbea-c1b1-46c2-aed5-3ad53abb28ba",
-            title: "First Item",
-            subtitle: "Test 1",
-        },
-        {
-            id: "3ac68afc-c605-48d3-a4f8-fbd91aa97f63",
-            title: "Second Item",
-            subtitle: "Test 2",
-        },
-        {
-            id: "58694a0f-3da1-471f-bd96-145571e29d72",
-            title: "Third Item",
-            subtitle: "Test 3",
-        },
-    ];
+    const checkIns = getCheckIns();
 
-    const renderItem = ({ item }) => <Item title={item.title} subtitle={item.subtitle} />;
+    const keyExtractor = (item, index) => index.toString();
 
-    return <FlatList data={DATA} renderItem={renderItem} keyExtractor={(item) => item.id} />;
+    const renderItem = ({ item }) => (
+        <ListItem bottomDivider>
+            <ListItem.Content>
+                <ListItem.Title style={{ fontSize: 24 }}>{item.dogName}</ListItem.Title>
+                <ListItem.Subtitle>Owner: {item.userName}</ListItem.Subtitle>
+            </ListItem.Content>
+        </ListItem>
+    );
+
+    return <FlatList keyExtractor={keyExtractor} data={checkIns} renderItem={renderItem} />;
 };
 
 export default ParkDetail;
