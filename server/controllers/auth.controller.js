@@ -15,6 +15,7 @@ exports.login = (req, res) => {
         let b = Buffer.from(hash);
         let refresh_token = b.toString("base64");
         res.status(201).send({
+            userId: req.body.userId,
             accessToken: token,
             refreshToken: refresh_token
         });

@@ -66,6 +66,17 @@ exports.findById = (id) => {
     });
 };
 
+exports.findProfileDataById = (id) => {
+    return User.findOne({ _id: id })
+        .populate("favParkID", "parkName")
+        .then((result) => {
+            result = result.toJSON();
+            delete result._id;
+            delete result.__v;
+            return result;
+        });
+};
+
 exports.createUser = (userData) => {
     const user = new User(userData);
 

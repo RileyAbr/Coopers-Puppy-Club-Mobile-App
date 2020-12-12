@@ -73,6 +73,24 @@ exports.list = (perPage, page) => {
     });
 };
 
+exports.listCheckinData = (perPage, page) => {
+    return new Promise((resolve, reject) => {
+        CheckIn.find()
+            .populate("parkID", "parkName")
+            .populate("userID")
+            .populate("dogID", "dogName")
+            .limit(perPage)
+            .skip(perPage * page)
+            .exec(function (err, checkIns) {
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(checkIns);
+                }
+            });
+    });
+};
+
 exports.patchCheckIn = (id, checkInData) => {
     return CheckIn.findOneAndUpdate(
         {
