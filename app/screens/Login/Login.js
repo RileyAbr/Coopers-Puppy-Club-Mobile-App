@@ -1,6 +1,10 @@
 import React from "react";
-import { Text } from "react-native";
+import { View, Button } from "react-native";
 
-const Login = () => <Text>Login works!</Text>;
+const Login = ({ handleSignIn }) => (
+    <View>
+        <Button title="Login" onPress={handleSignIn} />
+    </View>
+);
 
 export default Login;

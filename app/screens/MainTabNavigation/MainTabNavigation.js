@@ -9,7 +9,7 @@ import Profile from "../Profile";
 
 const Tab = createBottomTabNavigator();
 
-const MainTabNavigation = ({ theme }) => (
+const MainTabNavigation = ({ theme, handleLogOut }) => (
     <Tab.Navigator
         initialRouteName="Home"
         screenOptions={({ route }) => ({

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View } from "react-native";
+import { View, Button } from "react-native";
 import { Input } from "react-native-elements";
 import { createStackNavigator } from "@react-navigation/stack";
 
@@ -7,7 +7,7 @@ import { getLoginUser } from "../../services/mongoDB.service";
 
 const Stack = createStackNavigator();
 
-const ProfileForm = () => {
+const ProfileForm = ({ handleLogOut }) => {
     const [userData, setUserData] = useState(getLoginUser());
 
     const onChangeValue = (key, value) => {
@@ -72,6 +72,8 @@ const ProfileForm = () => {
                 value={userData.dogName}
                 onChangeText={(text) => onChangeValue("dogName", text)}
             />
+
+            <Button title="Logout" onPress={handleLogOut} />
         </View>
     );
 };

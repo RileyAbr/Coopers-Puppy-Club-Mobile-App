@@ -12,21 +12,15 @@ const App = () => {
     const [isSignedIn, setIsSignedIn] = useState(false);
 
     const toggleSignIn = () => {
-        alert(isSignedIn);
-        setIsSignedIn(true);
+        setIsSignedIn(!isSignedIn);
     };
 
-    if (isSignedIn) {
-        return (
-            <NavigationContainer theme={theme}>
-                <MainTabNavigation theme={theme} />
-            </NavigationContainer>
-        );
-    }
     return (
-        <View>
-            <Button title="Login" onPress={toggleSignIn} />
-        </View>
+        <NavigationContainer theme={theme}>
+            {isSignedIn && <MainTabNavigation theme={theme} handleSignOut={toggleSignIn} />}
+
+            {!isSignedIn && <Login handleSignIn={toggleSignIn} />}
+        </NavigationContainer>
     );
 };
 
