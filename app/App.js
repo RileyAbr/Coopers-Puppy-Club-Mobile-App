@@ -4,6 +4,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import {
     readSignInStatusFromStorage,
     writeSignInStatusToStorage,
+    removeSignInStatusFromStorage,
 } from "./services/storage.auth.service";
 import MainTabNavigation from "./screens/MainTabNavigation";
 import Login from "./screens/Login";
@@ -24,23 +25,23 @@ const App = () => {
         setUserAuthToken(newValue);
     };
 
+    const clearAuthToken = async () => {
+        await removeSignInStatusFromStorage();
+        setUserAuthToken(null);
+    };
+
     useEffect(() => {
         getAuthToken();
     }, []);
 
-    const toggleSignIn = () => {
-        setIsSignedIn(!isSignedIn);
-    };
-
     return (
         <NavigationContainer theme={theme}>
-            {isSignedIn && <MainTabNavigation theme={theme} handleSignOut={toggleSignIn} />}
+            {userAuthToken && (
+                <MainTabNavigation theme={theme} handleClearAuthToken={() => clearAuthToken()} />
+            )}
 
-            {!isSignedIn && (
-                <Login
-                    handleSignIn={() => setAuthToken(Math.random().toString(36).substr(2, 5))}
-                    value={userAuthToken}
-                />
+            {!userAuthToken && (
+                <Login handleSignIn={() => setAuthToken(Math.random().toString(36).substr(2, 5))} />
             )}
         </NavigationContainer>
     );
