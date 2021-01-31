@@ -7,12 +7,11 @@ import {
     removeSignInStatusFromStorage,
 } from "./services/storage.auth.service";
 import MainTabNavigation from "./screens/MainTabNavigation";
-import Login from "./screens/Login";
+import LoginScreenNavigation from "./screens/LoginScreenNavigation";
 
 import theme from "./theme";
 
 const App = () => {
-    const [isSignedIn, setIsSignedIn] = useState(false);
     const [userAuthToken, setUserAuthToken] = useState();
 
     const getAuthToken = async () => {
@@ -41,8 +40,15 @@ const App = () => {
             )}
 
             {!userAuthToken && (
-                <Login handleSignIn={() => setAuthToken(Math.random().toString(36).substr(2, 5))} />
+                <LoginScreenNavigation
+                    theme={theme}
+                    handleSetAuthToken={() => setAuthToken(Math.random().toString(36).substr(2, 5))}
+                />
             )}
+
+            {/* {!userAuthToken && (
+                <Login handleSignIn={() => setAuthToken(Math.random().toString(36).substr(2, 5))} />
+            )} */}
         </NavigationContainer>
     );
 };

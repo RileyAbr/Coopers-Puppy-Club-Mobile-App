@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Button, Text } from "react-native";
 
-const Login = ({ handleSignIn, value }) => (
+const Login = ({ handleSetAuthToken, value }) => (
     <View>
-        <Button title="Login" onPress={handleSignIn} />
+        <Button title="Login" onPress={handleSetAuthToken} />
         <Text>Test {value}</Text>
     </View>
 );

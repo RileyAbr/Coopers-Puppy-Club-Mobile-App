@@ -1,11 +1,7 @@
-import React, { useState, useEffect } from "react";
-import { View, Button, Text } from "react-native";
+import React, { useState } from "react";
+import { View, Button } from "react-native";
 import { Input } from "react-native-elements";
 import { createStackNavigator } from "@react-navigation/stack";
-import {
-    readSignInStatusFromStorage,
-    removeSignInStatusFromStorage,
-} from "../../services/storage.auth.service";
 import { getLoginUser } from "../../services/mongoDB.service";
 
 const Stack = createStackNavigator();
@@ -13,31 +9,14 @@ const Stack = createStackNavigator();
 const Profile = ({ handleClearAuthToken }) => {
     const ProfileForm = () => {
         const [userData, setUserData] = useState(getLoginUser());
-        const [userAuthToken, setUserAuthToken] = useState();
-
-        const getAuthToken = async () => {
-            const item = await readSignInStatusFromStorage();
-            setUserAuthToken(item);
-        };
-
-        const clearAuthToken = async () => {
-            await removeSignInStatusFromStorage();
-            setUserAuthToken(null);
-        };
 
         const onChangeValue = (key, value) => {
             const newUserData = { ...userData, [key]: value };
             setUserData(newUserData);
         };
 
-        useEffect(() => {
-            getAuthToken();
-        }, []);
-
         return (
             <View style={{ marginTop: 15 }}>
-                <Text>{userAuthToken}</Text>
-
                 <Input
                     placeholder="First Name"
                     leftIcon={{ type: "font-awesome", name: "user" }}

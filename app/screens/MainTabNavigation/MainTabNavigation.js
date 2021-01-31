@@ -16,7 +16,7 @@ const MainTabNavigation = ({ theme, handleClearAuthToken }) => {
         <Tab.Navigator
             initialRouteName="Home"
             screenOptions={({ route }) => ({
-                tabBarIcon: ({ focused, color, size }) => {
+                tabBarIcon: ({ color, size }) => {
                     let iconName;
 
                     switch (route.name) {
