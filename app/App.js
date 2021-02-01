@@ -35,20 +35,18 @@ const App = () => {
 
     return (
         <NavigationContainer theme={theme}>
+            {/* Main Route */}
             {userAuthToken && (
                 <MainTabNavigation theme={theme} handleClearAuthToken={() => clearAuthToken()} />
             )}
 
+            {/* Login Route */}
             {!userAuthToken && (
                 <LoginScreenNavigation
                     theme={theme}
                     handleSetAuthToken={() => setAuthToken(Math.random().toString(36).substr(2, 5))}
                 />
             )}
-
-            {/* {!userAuthToken && (
-                <Login handleSignIn={() => setAuthToken(Math.random().toString(36).substr(2, 5))} />
-            )} */}
         </NavigationContainer>
     );
 };

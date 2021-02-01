@@ -9,7 +9,11 @@ const LoginScreenNavigation = ({ theme, handleSetAuthToken }) => {
     const LoginScreen = () => <Login handleSetAuthToken={handleSetAuthToken} />;
 
     return (
-        <Stack.Navigator>
+        <Stack.Navigator
+            screenOptions={{
+                headerShown: false,
+            }}
+        >
             <Stack.Screen name="Login" component={LoginScreen} />
         </Stack.Navigator>
     );
