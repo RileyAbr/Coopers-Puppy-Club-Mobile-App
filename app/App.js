@@ -1,59 +1,54 @@
 import "react-native-gesture-handler";
-import React from "react";
-import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import React, { useState, useEffect } from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import {
+    readSignInStatusFromStorage,
+    writeSignInStatusToStorage,
+    removeSignInStatusFromStorage,
+} from "./services/storage.auth.service";
+import MainTabNavigation from "./screens/MainTabNavigation";
+import LoginScreenNavigation from "./screens/LoginScreenNavigation";
 
-import Icon from "react-native-vector-icons/FontAwesome";
 import theme from "./theme";
 
-// Screens
-import Home from "./screens/Home";
-import Parks from "./screens/Parks";
-import Profile from "./screens/Profile";
+const App = () => {
+    const [userAuthToken, setUserAuthToken] = useState();
 
-const Tab = createBottomTabNavigator();
+    const getAuthToken = async () => {
+        const item = await readSignInStatusFromStorage();
+        setUserAuthToken(item);
+    };
 
-const MainTabNavigation = () => (
-    <Tab.Navigator
-        initialRouteName="Home"
-        screenOptions={({ route }) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-                let iconName;
+    const setAuthToken = async (newValue) => {
+        await writeSignInStatusToStorage(newValue);
+        setUserAuthToken(newValue);
+    };
 
-                switch (route.name) {
-                    case "Home":
-                        iconName = "paw";
-                        break;
-                    case "Parks":
-                        iconName = "tree";
-                        break;
-                    case "Profile":
-                        iconName = "user";
-                        break;
-                    default:
-                        iconName = "question";
-                        break;
-                }
+    const clearAuthToken = async () => {
+        await removeSignInStatusFromStorage();
+        setUserAuthToken(null);
+    };
 
-                // You can return any component that you like here!
-                return <Icon name={iconName} size={size} color={color} />;
-            },
-        })}
-        tabBarOptions={{
-            activeTintColor: theme.colors.primary,
-            inactiveTintColor: "#5E503F",
-        }}
-    >
-        <Tab.Screen name="Parks" component={Parks} />
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Profile" component={Profile} />
-    </Tab.Navigator>
-);
+    useEffect(() => {
+        getAuthToken();
+    }, []);
 
-const App = () => (
-    <NavigationContainer theme={theme}>
-        <MainTabNavigation />
-    </NavigationContainer>
-);
+    return (
+        <NavigationContainer theme={theme}>
+            {/* Main Route */}
+            {userAuthToken && (
+                <MainTabNavigation theme={theme} handleClearAuthToken={() => clearAuthToken()} />
+            )}
+
+            {/* Login Route */}
+            {!userAuthToken && (
+                <LoginScreenNavigation
+                    theme={theme}
+                    handleSetAuthToken={() => setAuthToken(Math.random().toString(36).substr(2, 5))}
+                />
+            )}
+        </NavigationContainer>
+    );
+};
 
 export default App;
