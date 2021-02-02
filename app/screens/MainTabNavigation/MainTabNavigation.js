@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from "react-native-vector-icons/FontAwesome";
+import { useTheme } from "@react-navigation/native";
 
 // Screens
 import Home from "../Home";
@@ -9,7 +10,9 @@ import Profile from "../Profile";
 
 const Tab = createBottomTabNavigator();
 
-const MainTabNavigation = ({ theme, handleClearAuthToken }) => {
+const MainTabNavigation = ({ handleClearAuthToken }) => {
+    const { colors } = useTheme();
+
     const NavigationProfile = () => <Profile handleClearAuthToken={handleClearAuthToken} />;
 
     return (
@@ -39,7 +42,7 @@ const MainTabNavigation = ({ theme, handleClearAuthToken }) => {
                 },
             })}
             tabBarOptions={{
-                activeTintColor: theme.colors.primary,
+                activeTintColor: colors.primary,
                 inactiveTintColor: "#5E503F",
             }}
         >

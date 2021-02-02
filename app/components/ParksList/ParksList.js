@@ -21,7 +21,7 @@ function ParkBox({ navigation, parkName, count }) {
             justifyContent: "space-between",
         },
         parkBoxText: {
-            color: colors.lightText,
+            color: colors.textLight,
         },
         parkBoxTitle: {
             fontSize: 26,
@@ -44,7 +44,7 @@ function ParkBox({ navigation, parkName, count }) {
                             name="dog"
                             type="material-community"
                             size={26}
-                            color={colors.lightText}
+                            color={colors.textLight}
                             style={{ marginBottom: -5 }}
                         />
                     </Text>

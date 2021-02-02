@@ -1,15 +1,15 @@
 import "react-native-gesture-handler";
 import React, { useState, useEffect } from "react";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import {
     readSignInStatusFromStorage,
     writeSignInStatusToStorage,
     removeSignInStatusFromStorage,
 } from "./services/storage.auth.service";
+import colorCodes from "./theme-color-codes.json";
+
 import MainTabNavigation from "./screens/MainTabNavigation";
 import LoginScreenNavigation from "./screens/LoginScreenNavigation";
-
-import theme from "./theme";
 
 const App = () => {
     const [userAuthToken, setUserAuthToken] = useState();
@@ -33,17 +33,26 @@ const App = () => {
         getAuthToken();
     }, []);
 
+    const theme = {
+        ...DefaultTheme,
+        colors: {
+            ...DefaultTheme.colors,
+            primary: colorCodes.lightBlue,
+            background: userAuthToken ? colorCodes.offWhite : colorCodes.tan, // This line sets the background of the login screen to tan before the user logs in
+            card: colorCodes.tan,
+            text: colorCodes.offBlack,
+            textLight: colorCodes.offWhite,
+        },
+    };
+
     return (
         <NavigationContainer theme={theme}>
             {/* Main Route */}
-            {userAuthToken && (
-                <MainTabNavigation theme={theme} handleClearAuthToken={() => clearAuthToken()} />
-            )}
+            {userAuthToken && <MainTabNavigation handleClearAuthToken={() => clearAuthToken()} />}
 
             {/* Login Route */}
             {!userAuthToken && (
                 <LoginScreenNavigation
-                    theme={theme}
                     handleSetAuthToken={() => setAuthToken(Math.random().toString(36).substr(2, 5))}
                 />
             )}

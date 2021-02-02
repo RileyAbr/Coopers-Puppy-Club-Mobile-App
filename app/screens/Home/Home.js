@@ -109,7 +109,7 @@ const Home = () => {
                     height: FootSize,
                     borderRadius: FootSize,
                     backgroundColor: colors.primary,
-                    color: colors.lightText,
+                    color: colors.textLight,
                 }}
             />
         </View>
