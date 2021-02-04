@@ -35,14 +35,6 @@ const Login = ({ handleSetAuthToken }) => (
             />
         </View>
 
-        <Text style={{ fontSize: 18, fontFamily: "Baloo2-Regular" }}>
-            Almost before we knew it, we had left the ground.
-        </Text>
-        <Text style={{ fontSize: 18, fontFamily: "serif" }}>
-            Almost before we knew it, we had left the ground.
-        </Text>
-        <Text style={{ fontSize: 18 }}>Almost before we knew it, we had left the ground.</Text>
-
         <Button title="Login" onPress={handleSetAuthToken} />
     </View>
 );

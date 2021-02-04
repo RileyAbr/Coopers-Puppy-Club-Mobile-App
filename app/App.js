@@ -6,6 +6,7 @@ import {
     removeSignInStatusFromStorage,
 } from "./services/storage.auth.service";
 import colorCodes from "./theme-color-codes.json";
+import fontFamilies from "./theme-font-families.json";
 
 import MainTabNavigation from "./screens/MainTabNavigation";
 import LoginScreenNavigation from "./screens/LoginScreenNavigation";
@@ -41,6 +42,11 @@ const App = () => {
             card: colorCodes.tan,
             text: colorCodes.offBlack,
             textLight: colorCodes.offWhite,
+        },
+        fonts: {
+            heading: fontFamilies.heading,
+            subheading: fontFamilies.subheading,
+            body: fontFamilies.body,
         },
     };
 

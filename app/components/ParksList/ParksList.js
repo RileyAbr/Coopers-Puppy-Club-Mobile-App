@@ -5,14 +5,14 @@ import { Icon } from "react-native-elements";
 import { getParks } from "../../services/mongoDB.service";
 
 function ParkBox({ navigation, parkName, count }) {
-    const { colors } = useTheme();
+    const theme = useTheme();
 
     const styles = StyleSheet.create({
         parkBox: {
             height: 160,
             width: 160,
             margin: 10,
-            backgroundColor: colors.primary,
+            backgroundColor: theme.colors.primary,
             alignContent: "center",
             padding: 5,
         },
@@ -21,7 +21,7 @@ function ParkBox({ navigation, parkName, count }) {
             justifyContent: "space-between",
         },
         parkBoxText: {
-            color: colors.textLight,
+            color: theme.colors.textLight,
         },
         parkBoxTitle: {
             fontSize: 26,
@@ -44,7 +44,7 @@ function ParkBox({ navigation, parkName, count }) {
                             name="dog"
                             type="material-community"
                             size={26}
-                            color={colors.textLight}
+                            color={theme.colors.textLight}
                             style={{ marginBottom: -5 }}
                         />
                     </Text>
