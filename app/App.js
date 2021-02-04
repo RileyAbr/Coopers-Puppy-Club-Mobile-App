@@ -38,7 +38,7 @@ const App = () => {
         colors: {
             ...DefaultTheme.colors,
             primary: colorCodes.lightBlue,
-            background: userAuthToken ? colorCodes.offWhite : colorCodes.tan, // This line sets the background of the login screen to tan before the user logs in
+            background: !userAuthToken ? colorCodes.tan : colorCodes.offWhite, // This line sets the background of the login screen to tan before the user logs in
             card: colorCodes.tan,
             text: colorCodes.offBlack,
             textLight: colorCodes.offWhite,
