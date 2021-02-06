@@ -83,7 +83,16 @@ const Profile = ({ handleClearAuthToken }) => {
                         alignItems: "center",
                     }}
                 >
-                    <AppButton title="Logout" onPress={() => handleClearAuthToken()} />
+                    <View style={{ paddingBottom: 3 }}>
+                        <AppButton
+                            title="Save Profile"
+                            onPress={() => console.log("Saved Profile")}
+                        />
+                    </View>
+
+                    <View style={{ paddingBottom: 3 }}>
+                        <AppButton title="Logout" onPress={() => handleClearAuthToken()} />
+                    </View>
                 </View>
             </View>
         );
