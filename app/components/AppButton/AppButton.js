@@ -15,7 +15,7 @@ const AppButton = ({ title, onPress }) => {
             }}
             titleStyle={{
                 fontFamily: theme.fonts.body.family,
-                fontSize: theme.fonts.body.size,
+                fontSize: theme.fonts.body.size + 1,
             }}
         />
     );
