@@ -5,8 +5,8 @@ import {
     writeSignInStatusToStorage,
     removeSignInStatusFromStorage,
 } from "./services/storage.auth.service";
-import colorCodes from "./theme-color-codes.json";
-import fontFamilies from "./theme-font-families.json";
+import colorCodes from "./theme/theme-color-codes.json";
+import fontFamilies from "./theme/theme-font-families.json";
 
 import MainTabNavigation from "./screens/MainTabNavigation";
 import LoginScreenNavigation from "./screens/LoginScreenNavigation";
@@ -40,6 +40,7 @@ const App = () => {
             primary: colorCodes.lightBlue,
             background: !userAuthToken ? colorCodes.tan : colorCodes.offWhite, // This line sets the background of the login screen to tan before the user logs in
             card: colorCodes.tan,
+            cardBorder: colorCodes.leather,
             text: colorCodes.offBlack,
             textLight: colorCodes.offWhite,
         },

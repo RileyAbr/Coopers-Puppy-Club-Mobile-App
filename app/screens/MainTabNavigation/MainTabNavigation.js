@@ -11,7 +11,7 @@ import Profile from "../Profile";
 const Tab = createBottomTabNavigator();
 
 const MainTabNavigation = ({ handleClearAuthToken }) => {
-    const { colors } = useTheme();
+    const theme = useTheme();
 
     const NavigationProfile = () => <Profile handleClearAuthToken={handleClearAuthToken} />;
 
@@ -42,8 +42,8 @@ const MainTabNavigation = ({ handleClearAuthToken }) => {
                 },
             })}
             tabBarOptions={{
-                activeTintColor: colors.primary,
-                inactiveTintColor: "#5E503F",
+                activeTintColor: theme.colors.primary,
+                inactiveTintColor: theme.colors.cardBorder,
             }}
         >
             <Tab.Screen name="Parks" component={Parks} />
