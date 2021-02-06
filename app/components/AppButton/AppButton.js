@@ -8,7 +8,15 @@ const AppButton = ({ title, onPress }) => {
         <Button
             title={title}
             onPress={onPress}
-            buttonStyle={{ backgroundColor: theme.colors.primary }}
+            buttonStyle={{
+                backgroundColor: theme.colors.primary,
+                paddingVertical: 7,
+                paddingHorizontal: 12,
+            }}
+            titleStyle={{
+                fontFamily: theme.fonts.body.family,
+                fontSize: theme.fonts.body.size,
+            }}
         />
     );
 };

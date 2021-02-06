@@ -7,9 +7,9 @@ const AppSubheading = ({ children, hasLightBackground }) => {
     return (
         <Text
             style={{
-                fontFamily: theme.fonts.subheading,
+                fontFamily: theme.fonts.subheading.family,
+                fontSize: theme.fonts.subheading.size,
                 color: hasLightBackground ? theme.colors.text : theme.colors.textLight,
-                fontSize: 24,
             }}
         >
             {children}

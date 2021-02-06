@@ -1,6 +1,7 @@
 import React from "react";
-import { View, Image, Text } from "react-native";
-import { Input, Button } from "react-native-elements";
+import { View, Image } from "react-native";
+import { Input } from "react-native-elements";
+import AppButton from "../../components/AppButton";
 
 import logo from "../../assets/logo_transparent2.png";
 
@@ -35,7 +36,7 @@ const Login = ({ handleSetAuthToken }) => (
             />
         </View>
 
-        <Button title="Login" onPress={handleSetAuthToken} />
+        <AppButton title="Login" onPress={handleSetAuthToken} />
     </View>
 );
 

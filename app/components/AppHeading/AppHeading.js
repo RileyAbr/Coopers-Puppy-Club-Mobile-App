@@ -7,9 +7,9 @@ const AppHeading = ({ children, hasLightBackground }) => {
     return (
         <Text
             style={{
-                fontFamily: theme.fonts.heading,
+                fontFamily: theme.fonts.heading.family,
+                fontSize: theme.font.heading.size,
                 color: hasLightBackground ? theme.colors.text : theme.colors.textLight,
-                fontSize: 24,
             }}
         >
             {children}

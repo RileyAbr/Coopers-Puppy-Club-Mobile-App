@@ -7,9 +7,9 @@ const AppText = ({ children, hasLightBackground }) => {
     return (
         <Text
             style={{
-                fontFamily: theme.fonts.body,
+                fontFamily: theme.fonts.body.family,
+                fontSize: theme.fonts.body.size + 1,
                 color: hasLightBackground ? theme.colors.text : theme.colors.textLight,
-                fontSize: 16,
             }}
         >
             {children}
