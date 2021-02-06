@@ -5,7 +5,7 @@ import Login from "../Login";
 
 const Stack = createStackNavigator();
 
-const LoginScreenNavigation = ({ theme, handleSetAuthToken }) => {
+const LoginScreenNavigation = ({ handleSetAuthToken }) => {
     const LoginScreen = () => <Login handleSetAuthToken={handleSetAuthToken} />;
 
     return (

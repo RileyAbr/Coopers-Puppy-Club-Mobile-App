@@ -1,18 +1,19 @@
 import React from "react";
 import { useTheme } from "@react-navigation/native";
-import { View, Text, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
+import { View, SafeAreaView, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { Icon } from "react-native-elements";
 import { getParks } from "../../services/mongoDB.service";
+import AppSubheading from "../AppSubheading";
 
 function ParkBox({ navigation, parkName, count }) {
-    const { colors } = useTheme();
+    const theme = useTheme();
 
     const styles = StyleSheet.create({
         parkBox: {
             height: 160,
             width: 160,
             margin: 10,
-            backgroundColor: colors.primary,
+            backgroundColor: theme.colors.primary,
             alignContent: "center",
             padding: 5,
         },
@@ -20,15 +21,10 @@ function ParkBox({ navigation, parkName, count }) {
             flex: 1,
             justifyContent: "space-between",
         },
-        parkBoxText: {
-            color: colors.lightText,
-        },
         parkBoxTitle: {
-            fontSize: 26,
             alignSelf: "flex-start",
         },
         parkBoxCount: {
-            fontSize: 22,
             alignSelf: "flex-end",
         },
     });
@@ -37,17 +33,19 @@ function ParkBox({ navigation, parkName, count }) {
         <TouchableOpacity onPress={() => navigation.navigate("Park", { parkName })}>
             <View style={styles.parkBox}>
                 <View style={styles.parkBoxWrapper}>
-                    <Text style={[styles.parkBoxText, styles.parkBoxTitle]}>{parkName}</Text>
-                    <Text style={[styles.parkBoxText, styles.parkBoxCount]}>
-                        {count}{" "}
-                        <Icon
-                            name="dog"
-                            type="material-community"
-                            size={26}
-                            color={colors.lightText}
-                            style={{ marginBottom: -5 }}
-                        />
-                    </Text>
+                    <AppSubheading>{parkName}</AppSubheading>
+                    <View style={styles.parkBoxCount}>
+                        <AppSubheading>
+                            {count}{" "}
+                            <Icon
+                                name="dog"
+                                type="material-community"
+                                size={26}
+                                color={theme.colors.textLight}
+                                style={{ marginBottom: -5 }}
+                            />
+                        </AppSubheading>
+                    </View>
                 </View>
             </View>
         </TouchableOpacity>

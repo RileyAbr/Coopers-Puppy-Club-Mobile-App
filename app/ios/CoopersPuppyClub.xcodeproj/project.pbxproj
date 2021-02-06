@@ -32,6 +32,13 @@
 		61EA51AD90D643BFA28A1C25 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 511A07A5812B4C1FB27FD454 /* Octicons.ttf */; };
 		F80034311C2C4D929AFE8D4A /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5B26316E3DAC4443B07E4427 /* SimpleLineIcons.ttf */; };
 		1244983B82DC43C2ABF1AA51 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 24B77B158A38483DAF7C9136 /* Zocial.ttf */; };
+		AF3144213BD74C5E9593A6D3 /* Baloo2-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D3E5C1E39FC24C0FA57D6F43 /* Baloo2-Bold.ttf */; };
+		D903686155E741CEADD8A531 /* Baloo2-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 123003C92AD546B38213DB96 /* Baloo2-ExtraBold.ttf */; };
+		582DA94FF1F54978961D3016 /* Baloo2-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8FDB2AD5751641C1B43ACB62 /* Baloo2-Medium.ttf */; };
+		F1C17063F5374D48952E05BA /* Baloo2-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CE6E9E759D1D4A959267A4E6 /* Baloo2-Regular.ttf */; };
+		CAAF8E55637E483F8150348E /* Baloo2-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0DC4278EEC6D475A8E5C6DB5 /* Baloo2-SemiBold.ttf */; };
+		4E271F1B571341D38CEE8689 /* RammettoOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C6737B8AB96B45F8B1D48D40 /* RammettoOne-Regular.ttf */; };
+		4525D13EE6E34C878F476AB2 /* Righteous-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4CFA9FBACDA34C1D87998DD3 /* Righteous-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +90,13 @@
 		511A07A5812B4C1FB27FD454 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		5B26316E3DAC4443B07E4427 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		24B77B158A38483DAF7C9136 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		D3E5C1E39FC24C0FA57D6F43 /* Baloo2-Bold.ttf */ = {isa = PBXFileReference; name = "Baloo2-Bold.ttf"; path = "../assets/fonts/Baloo2-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		123003C92AD546B38213DB96 /* Baloo2-ExtraBold.ttf */ = {isa = PBXFileReference; name = "Baloo2-ExtraBold.ttf"; path = "../assets/fonts/Baloo2-ExtraBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		8FDB2AD5751641C1B43ACB62 /* Baloo2-Medium.ttf */ = {isa = PBXFileReference; name = "Baloo2-Medium.ttf"; path = "../assets/fonts/Baloo2-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		CE6E9E759D1D4A959267A4E6 /* Baloo2-Regular.ttf */ = {isa = PBXFileReference; name = "Baloo2-Regular.ttf"; path = "../assets/fonts/Baloo2-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		0DC4278EEC6D475A8E5C6DB5 /* Baloo2-SemiBold.ttf */ = {isa = PBXFileReference; name = "Baloo2-SemiBold.ttf"; path = "../assets/fonts/Baloo2-SemiBold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C6737B8AB96B45F8B1D48D40 /* RammettoOne-Regular.ttf */ = {isa = PBXFileReference; name = "RammettoOne-Regular.ttf"; path = "../assets/fonts/RammettoOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		4CFA9FBACDA34C1D87998DD3 /* Righteous-Regular.ttf */ = {isa = PBXFileReference; name = "Righteous-Regular.ttf"; path = "../assets/fonts/Righteous-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -209,6 +223,13 @@
 				511A07A5812B4C1FB27FD454 /* Octicons.ttf */,
 				5B26316E3DAC4443B07E4427 /* SimpleLineIcons.ttf */,
 				24B77B158A38483DAF7C9136 /* Zocial.ttf */,
+				D3E5C1E39FC24C0FA57D6F43 /* Baloo2-Bold.ttf */,
+				123003C92AD546B38213DB96 /* Baloo2-ExtraBold.ttf */,
+				8FDB2AD5751641C1B43ACB62 /* Baloo2-Medium.ttf */,
+				CE6E9E759D1D4A959267A4E6 /* Baloo2-Regular.ttf */,
+				0DC4278EEC6D475A8E5C6DB5 /* Baloo2-SemiBold.ttf */,
+				C6737B8AB96B45F8B1D48D40 /* RammettoOne-Regular.ttf */,
+				4CFA9FBACDA34C1D87998DD3 /* Righteous-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -368,6 +389,13 @@
 				61EA51AD90D643BFA28A1C25 /* Octicons.ttf in Resources */,
 				F80034311C2C4D929AFE8D4A /* SimpleLineIcons.ttf in Resources */,
 				1244983B82DC43C2ABF1AA51 /* Zocial.ttf in Resources */,
+				AF3144213BD74C5E9593A6D3 /* Baloo2-Bold.ttf in Resources */,
+				D903686155E741CEADD8A531 /* Baloo2-ExtraBold.ttf in Resources */,
+				582DA94FF1F54978961D3016 /* Baloo2-Medium.ttf in Resources */,
+				F1C17063F5374D48952E05BA /* Baloo2-Regular.ttf in Resources */,
+				CAAF8E55637E483F8150348E /* Baloo2-SemiBold.ttf in Resources */,
+				4E271F1B571341D38CEE8689 /* RammettoOne-Regular.ttf in Resources */,
+				4525D13EE6E34C878F476AB2 /* Righteous-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

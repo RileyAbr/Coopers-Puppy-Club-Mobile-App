@@ -71,6 +71,13 @@
 		<string>Octicons.ttf</string>
 		<string>SimpleLineIcons.ttf</string>
 		<string>Zocial.ttf</string>
+		<string>Baloo2-Bold.ttf</string>
+		<string>Baloo2-ExtraBold.ttf</string>
+		<string>Baloo2-Medium.ttf</string>
+		<string>Baloo2-Regular.ttf</string>
+		<string>Baloo2-SemiBold.ttf</string>
+		<string>RammettoOne-Regular.ttf</string>
+		<string>Righteous-Regular.ttf</string>
 	</array>
 </dict>
 </plist>
