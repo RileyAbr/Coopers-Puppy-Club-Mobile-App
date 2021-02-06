@@ -1,17 +1,10 @@
 import React, { useState } from "react";
-import { View } from "react-native";
-import { useTheme } from "@react-navigation/native";
-import { Button } from "react-native-elements";
 import axios from "axios";
-
-const ToeBeanSize = 90;
-const FootSize = 210;
+import CheckInButton from "../../components/CheckInButton";
 
 const Home = () => {
     const [checkedIn, setCheckedIn] = useState(false);
     const [checkedInID, setCheckedInID] = useState();
-
-    const { colors } = useTheme();
 
     const handleCheckInPress = () => {
         if (checkedIn) {
@@ -53,66 +46,10 @@ const Home = () => {
     };
 
     return (
-        <View style={{ flex: 1, alignItems: "center", justifyContent: "center" }}>
-            <View
-                style={{
-                    width: "100%",
-                    flexDirection: "row",
-                    justifyContent: "center",
-                    marginBottom: -35,
-                }}
-            >
-                <View
-                    style={{
-                        width: ToeBeanSize,
-                        height: ToeBeanSize,
-                        backgroundColor: colors.primary,
-                        borderRadius: ToeBeanSize,
-                        marginTop: 60,
-                    }}
-                />
-                <View
-                    style={{
-                        width: ToeBeanSize,
-                        height: ToeBeanSize,
-                        backgroundColor: colors.primary,
-                        borderRadius: ToeBeanSize,
-                        marginLeft: 0,
-                        marginRight: 5,
-                    }}
-                />
-                <View
-                    style={{
-                        width: ToeBeanSize,
-                        height: ToeBeanSize,
-                        backgroundColor: colors.primary,
-                        borderRadius: ToeBeanSize,
-                        marginLeft: 5,
-                        marginRight: 0,
-                    }}
-                />
-                <View
-                    style={{
-                        width: ToeBeanSize,
-                        height: ToeBeanSize,
-                        backgroundColor: colors.primary,
-                        borderRadius: ToeBeanSize,
-                        marginTop: 60,
-                    }}
-                />
-            </View>
-            <Button
-                title={checkedIn ? "Check-out" : "Check-in"}
-                onPress={handleCheckInPress}
-                buttonStyle={{
-                    width: FootSize,
-                    height: FootSize,
-                    borderRadius: FootSize,
-                    backgroundColor: colors.primary,
-                    color: colors.textLight,
-                }}
-            />
-        </View>
+        <CheckInButton
+            title={checkedIn ? "Check-out" : "Check-in"}
+            handleCheckIn={handleCheckInPress}
+        />
     );
 };
 
