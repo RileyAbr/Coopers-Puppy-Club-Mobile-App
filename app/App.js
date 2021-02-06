@@ -44,9 +44,15 @@ const App = () => {
             textLight: colorCodes.offWhite,
         },
         fonts: {
-            heading: fontFamilies.heading,
-            subheading: fontFamilies.subheading,
-            body: fontFamilies.body,
+            heading: {
+                family: fontFamilies.heading,
+                size: 24,
+            },
+            subheading: {
+                family: fontFamilies.subheading,
+                size: 22,
+            },
+            body: { family: fontFamilies.body, size: 16 },
         },
     };
 
